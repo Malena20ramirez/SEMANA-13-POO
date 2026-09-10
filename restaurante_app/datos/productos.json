@@ -1,0 +1,20 @@
+[
+  {
+    "codigo": "P1",
+    "nombre": "Hamburguesa Especial",
+    "precio": 5.50,
+    "stock": "10"
+  },
+  {
+    "codigo": "P2",
+    "nombre": "Jugo Natural de Naranja",
+    "precio": 1.50,
+    "stock": "10"
+  },
+  {
+    "codigo": "P3",
+    "nombre": "Papas Fritas",
+    "precio": 2.00,
+    "stock": "10"
+  }
+]
