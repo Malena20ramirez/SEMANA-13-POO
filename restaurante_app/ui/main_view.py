@@ -1,21 +1,19 @@
 import tkinter as tk
 from tkinter import messagebox, ttk
 
-
 class MainView(tk.Frame):
     def __init__(self, master, restaurante_servicio, usuario_actual, al_cerrar_sesion):
-        super().__init__(master, bg="#eef3f8")
+        super().__init__(master, bg="#f7fafc")
         self.restaurante_servicio = restaurante_servicio
         self.usuario_actual = usuario_actual
         self.al_cerrar_sesion = al_cerrar_sesion
         self.contenido = None
 
-
         self.definir_estilos()
         self.construir_interfaz()
 
     def definir_estilos(self):
-        # Define estilos reutilizables para esta vista.
+        # Define colores y estilos reutilizables de esta vista.
         self.color_fondo = "#f7fafc"
         self.color_encabezado = "#1f2a44"
         self.color_texto = "#243447"
@@ -26,20 +24,20 @@ class MainView(tk.Frame):
         estilo.theme_use("clam")
         estilo.configure(
             "MenuApp.TButton",
-            background= self.color_secundario,
-            foreground= self.color_encabezado,
+            background=self.color_secundario,
+            foreground=self.color_encabezado,
             font=("Arial", 10, "bold"),
             padding=(12, 8),
             borderwidth=0,
         )
         estilo.map("MenuApp.TButton", background=[("active", "#c7ddff")])
         estilo.configure(
-         "CerrarSesion.TButton",
-          background="#e11d48",
-          foreground="#ffffff",
-          font=("Arial", 10, "bold"),
-          padding=(12, 8),
-          borderwidth=0,
+            "CerrarSesion.TButton",
+            background="#e11d48",
+            foreground="#ffffff",
+            font=("Arial", 10, "bold"),
+            padding=(12, 8),
+            borderwidth=0,
         )
         estilo.map("CerrarSesion.TButton", background=[("active", "#be123c")])
 

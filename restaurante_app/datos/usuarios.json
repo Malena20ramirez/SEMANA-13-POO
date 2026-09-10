@@ -2,14 +2,13 @@
   {
     "identificador": "1",
     "nombre": "Malena Ramirez",
-    "usuario": "malena_123",
-    "contraseña": "15012"
+    "usuario": "malena_321",
+    "contrasena": "15023"
   },
   {
     "identificador": "2",
     "nombre": "Luis Campos",
-    "usuario": "luis_123",
-    "contraseña": "09629"
+    "usuario": "luis_321",
+    "contrasena": "09622"
   }
 ]
-

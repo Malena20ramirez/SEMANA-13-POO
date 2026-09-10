@@ -1,7 +1,6 @@
 from modelos.producto import Producto
 from modelos.usuario import Usuario
 
-
 class RestauranteServicio:
     def __init__(self, archivo_servicio):
         self.archivo_servicio = archivo_servicio
@@ -19,7 +18,7 @@ class RestauranteServicio:
                 datos.get("identificador", ""),
                 datos.get("nombre", ""),
                 datos.get("usuario", ""),
-                datos.get("contraseña", "")
+                datos.get("contrasena", "")
             )
             for datos in usuarios_json
         ]
@@ -28,22 +27,20 @@ class RestauranteServicio:
             Producto(
                 datos.get("codigo", ""),
                 datos.get("nombre", ""),
-                datos.get("precio", 0),
+                datos.get("precio", 0.0),
                 datos.get("stock", 0)
-
             )
             for datos in productos_json
         ]
 
-    def validar_acceso(self, usuario, contraseña):
+    def validar_acceso(self, usuario, contrasena):
         # Verifica si las credenciales coinciden con un usuario cargado.
         for usuario_registrado in self.usuarios:
             if (
                 usuario_registrado.usuario == usuario
-                and usuario_registrado.contraseña == contraseña
+                and usuario_registrado.contrasena == contrasena
             ):
                 return usuario_registrado
-
         return None
 
     def cantidad_usuarios(self):

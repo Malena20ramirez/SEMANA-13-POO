@@ -1,7 +1,6 @@
 import json
 from pathlib import Path
 
-
 class ArchivoServicio:
     def __init__(self, carpeta_datos):
         self.carpeta_datos = Path(carpeta_datos)

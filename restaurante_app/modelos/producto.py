@@ -8,7 +8,7 @@ class Producto:
     @staticmethod
     def validar_texto(valor, campo):
         if not valor or not str(valor).strip():
-            raise ValueError(f"El campo {campo} no puede estar vacio.")
+            raise ValueError(f"El campo {campo} no puede estar vacío.")
         return str(valor).strip()
 
     @staticmethod
@@ -20,7 +20,6 @@ class Producto:
             return val
         except (ValueError, TypeError):
             raise ValueError(f"El campo {campo} debe ser un valor numérico válido.")
-
 
     @property
     def codigo(self):
@@ -52,4 +51,4 @@ class Producto:
 
     @stock.setter
     def stock(self, valor):
-        self._stock = self.validar_positivo(valor, "stock", tipo=int)
+        self._stock = self.validar_positivo(valor, "stock", int)

@@ -1,7 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
 
-
 class LoginView(tk.Frame):
     def __init__(self, master, restaurante_servicio, al_iniciar_sesion):
         super().__init__(master, bg="#eef3f8")
@@ -9,7 +8,7 @@ class LoginView(tk.Frame):
         self.al_iniciar_sesion = al_iniciar_sesion
 
         self.usuario_entry = None
-        self.contrasena_entry = None
+        self.contraseña_entry = None
         self.mensaje_error = None
 
         self.definir_estilos()
@@ -66,7 +65,7 @@ class LoginView(tk.Frame):
 
         tk.Label(
             contenedor,
-            text="Contrasena",
+            text="Contraseña",
             bg="#ffffff",
             fg="#243447",
             font=("Arial", 10, "bold"),
@@ -101,17 +100,17 @@ class LoginView(tk.Frame):
     def iniciar_sesion(self):
         # Obtiene los valores escritos y solicita la validacion al servicio.
         assert self.usuario_entry is not None
-        assert self.contraseña_entry is not None
+        assert self.contrasena_entry is not None
         assert self.mensaje_error is not None
 
         usuario = self.usuario_entry.get().strip()
-        contraseña = self.contraseña_entry.get().strip()
+        contrasena = self.contrasena_entry.get().strip()
 
-        if not usuario or not contraseña:
-            self.mensaje_error.config(text="Ingrese usuario y contraseña.")
+        if not usuario or not contrasena:
+            self.mensaje_error.config(text="Ingrese usuario y contrasena.")
             return
 
-        usuario_validado = self.restaurante_servicio.validar_acceso(usuario, contraseña)
+        usuario_validado = self.restaurante_servicio.validar_acceso(usuario, contrasena)
 
         if usuario_validado is None:
             self.mensaje_error.config(text="Credenciales incorrectas.")

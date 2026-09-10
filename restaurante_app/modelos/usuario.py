@@ -1,17 +1,16 @@
 class Usuario:
-    def __init__(self, identificador, nombre,usuario, contraseña):
+    def __init__(self, identificador, nombre, usuario, contrasena):
         self.identificador = identificador
         self.nombre = nombre
         self.usuario = usuario
-        self.contraseña = contraseña
-    
+        self.contrasena = contrasena
 
     @staticmethod
     def validar_texto(valor, campo):
-        if not valor or not str(valor).strip():
+        if not valor or not valor.strip():
             raise ValueError(f"El campo {campo} no puede estar vacio.")
 
-        return str(valor).strip()
+        return valor.strip()
 
     @property
     def identificador(self):
@@ -29,7 +28,6 @@ class Usuario:
     def nombre(self, valor):
         self._nombre = self.validar_texto(valor, "nombre")
 
-
     @property
     def usuario(self):
         return self._usuario
@@ -39,11 +37,9 @@ class Usuario:
         self._usuario = self.validar_texto(valor, "usuario")
 
     @property
-    def contraseña(self):
-        return self._contraseña
+    def contrasena(self):
+        return self._contrasena
 
-    @contraseña.setter
-    def contraseña(self, valor):
-        self._contraseña = self.validar_texto(valor, "contraseña")
-
-
+    @contrasena.setter
+    def contrasena(self, valor):
+        self._contrasena = self.validar_texto(valor, "contrasena")
